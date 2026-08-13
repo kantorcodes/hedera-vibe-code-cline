@@ -1,5 +1,5 @@
 # Verify this Cline template without changing the project dependency graph:
-# uvx --from hol-guard plugin-scanner verify .
+# uvx --from hol-guard plugin-scanner scan .
 
 [scanner]
 profile = "strict-security"

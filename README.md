@@ -53,6 +53,16 @@ If you're a bit more meticulous, before you start prompting:
   - Want to find out more about what makes for a great technical architecture document? Recommended article: [arc42 Template Overview](https://arc42.org/overview)
 - Look at `docs/tasks.md`
 
+### Optional security preflight
+
+Before trusting generated changes or enabling broad auto-approval, run the static scanner from [HOL Guard](https://hol.org/guard/security):
+
+```shell
+uvx --from hol-guard plugin-scanner scan .
+```
+
+The checked-in `.plugin-scanner.toml` selects the `strict-security` profile. The scan runs without adding HOL Guard to the generated project's dependency graph and does not execute the project.
+
 Note that all of these files are initially a default template.
 If the set values do not work for you, feel free to modify them *before* you start prompting Cline.
 Alternatively, you can ask Cline itself to help you to flesh out these documents, via prompts, prior to prompting it to start development tasks.
